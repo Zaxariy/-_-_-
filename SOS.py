@@ -169,20 +169,21 @@ spinkoins=Game(spinkoins)
 
 if spinkoins==0 :
 	print("Извините вы не можете продолжать игру")
-	#break
 	sys.exit
-else  :
+elif spinkoins>0  :
 	print("Желаете сыграть еще?:введите yes или no")
 	otvet=str(input())
 	if otvet!="yes" :
 		print(" ")
 	elif otvet=="yes":
 		while otvet=="yes" :
-			spinkoins=Game(spinkoins)
 			if spinkoins==0 :
 				print("Извините вы не можете продолжать игру")
-			print("Желаете сыграть еще?:введите yes или no")
-			otvet=str(input())
+				break
+			elif spinkoins>0:
+				#print("Желаете сыграть еще?:введите yes или no")
+				#otvet=str(input())
+				spinkoins=Game(spinkoins)
 
 
 
