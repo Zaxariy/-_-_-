@@ -1,12 +1,12 @@
-import sys
+#Oглавление 
 print("\n\t\t\tДобро пожаловать в игру Топоры и Тузы 1.0\n\t\t\tПравила игры Топоры и Тузы\nИгра загадывает четырех значное число,Игрок должен отгадать это число за как можно меньшое количество попыток\nЦифра вашего числа называется Топором ,если в загаданном машиной числе в том же месте стоит та же цифра\nЦифра вашего числа называется Тузом ,если в загаданном числе есть таже цифра,но она стоит в другом месте\nИзначально вам дается 10 спинкоинов,минимальная ставка 1,максимальная половина вашего счета\nПри угаданном числе меньше чем за 10 попыток вам будет начисле выйграш,в противном же случаи вы потеряете часть ваших спинкоинов\n\t\t\tПриятного время провождения")
-
-spinkoins=2
+#README: в коде присуствуют такие строки как print(" ") они равносильны "\n"
+spinkoins=10
 
 def Game(spinkoins):
 
 	print("Ваша Ставка\n")
-	stavka=int(input())
+	stavka=int(input('Введите вашу ставку: '))
 	#spinkoins=int(10)  
 	spinkoins_p=int(spinkoins*0.5)
 	if stavka==1 :
@@ -17,7 +17,7 @@ def Game(spinkoins):
 		else :
 			while stavka<1 or stavka>spinkoins_p  :
 				print("Ошибка\nВаша Ставка\n")
-				stavka=int(input())
+				stavka=int(input('Введите вашу ставку: '))
 				if stavka==1 :
 					break
 
@@ -56,7 +56,7 @@ def Game(spinkoins):
 	def number():
 #вводим пользовательское число
 
-		num=str(input())
+		num=str(input('Ваше число: "))
 
 #ограничение для числа
 
@@ -162,14 +162,16 @@ def Game(spinkoins):
 	spinkoins=int(spinkoins+win) 
 	print("Ваш текущий счет:"+" "+str(spinkoins))
 
-#Конец 
 	return spinkoins  
 
-spinkoins=Game(spinkoins)
+#Конец функции 
+
+spinkoins=Game(spinkoins)#Вызов и присваивание функции для обновления счета
+
+#Условие запуска Игры
 
 if spinkoins==0 :
 	print("Извините вы не можете продолжать игру")
-	sys.exit
 elif spinkoins>0  :
 	print("Желаете сыграть еще?:введите yes или no")
 	otvet=str(input())
@@ -181,14 +183,4 @@ elif spinkoins>0  :
 				print("Извините вы не можете продолжать игру")
 				break
 			elif spinkoins>0:
-				#print("Желаете сыграть еще?:введите yes или no")
-				#otvet=str(input())
 				spinkoins=Game(spinkoins)
-
-
-
-
-
-
-
-
