@@ -57,7 +57,7 @@ def Game(spinkoins):
 
 #конец 
 
-    print(random_str)
+#    print(random_str)
 
 #начало функции по вводу пользовательского числа
 
