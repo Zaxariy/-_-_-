@@ -149,8 +149,12 @@ def Game(spinkoins):
             axe = open(number, random_str)
             poputka = poputka + 1
             kol_poput = 10 - poputka
-            print("У вас осталось" + ' ' + str(kol_poput) + " попыток")
-            print(" ")
+            if kol_poput!=-1 :
+                print("У вас осталось" + ' ' + str(kol_poput) + " попыток")
+                print(" ")
+            else :
+                print("Игра окончена\n")
+
             if poputka == 11:
                 break
     if axe == 4:
@@ -184,21 +188,13 @@ spinkoins = Game(spinkoins)  # Вызов и присваивание функц
 
 if spinkoins>0 :
     while spinkoins>0 :
-        print("Желаете сыграть еще?:введите yes или no")
-        otvet = input("Ваш ответ:")
-        otvet=otvet.lower()
-        otvet=otvet.rstrip()
-        if otvet!='yes' or otvet!='no' :
-            while True:
-                print("Желаете сыграть еще?:введите yes или no")
-                otvet = input("Ваш ответ:")
-                otvet = otvet.lower()
-                otvet = otvet.rstrip()
-                if otvet == 'yes' or otvet == 'no':
-                    print("OK")
-                    break
-
-
+        while True:
+            print("Желаете сыграть еще?:введите yes или no")
+            otvet = input("Ваш ответ:")
+            otvet = otvet.lower()
+            otvet = otvet.rstrip()
+            if otvet == 'yes' or otvet == 'no':
+                break
         if otvet == 'yes':
             spinkoins= Game(spinkoins)
         elif otvet=='no' :
